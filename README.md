@@ -47,8 +47,47 @@ Below we are going to look at the step by step approach on how to convert FASTQ 
 | 4 | **Picard MarkDuplicates** | Identifies and marks duplicate reads |
 | 5 | **FreeBayes** | Performs variant calling to generate raw VCF |
 
+**Detailed explanation of each of the tools/steps used:**
 
+1. Quality Control - FastQC
 
+    Input: Raw FASTQ files
+
+    Output: Quality reports
+
+    Purpose: Identifies issues like low-quality reads or adapter contamination.
+
+2. Trimming - Trimmomatic
+
+    Input: Raw FASTQ
+
+    Output: Cleaned FASTQ
+
+    Purpose: Removes adapters and low-quality bases, improving downstream analysis.
+
+3. Alignment - BWA-MEM
+
+    Input: Clean FASTQ + Reference Genome
+
+    Output: SAM file (sequence alignment)
+
+    Purpose: Maps reads to a known reference genome.
+
+4. Mark Duplicates - Picard
+
+    Input: BAM
+
+    Output: Deduplicated BAM
+
+    Purpose: Identifies and flags PCR duplicates to avoid false variants.
+
+5. Variant Calling - FreeBayes or GATK
+
+    Input: BAM + Reference Genome
+
+    Output: VCF
+
+    Purpose: Detects SNPs and INDELs from aligned reads.
 
 
 
