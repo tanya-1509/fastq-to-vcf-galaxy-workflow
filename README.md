@@ -89,5 +89,13 @@ Below we are going to look at the step by step approach on how to convert FASTQ 
 
     Purpose: Detects SNPs and INDELs from aligned reads.
 
+flowchart TD
+    A[Raw FASTQ Files] --> B[FastQC: Quality Control]
+    B --> C[Trimmomatic: Read Trimming]
+    C --> D[Alignment: BWA-MEM]
+    D --> E[Samtools: Sorting & MarkDuplicates]
+    E --> F[Variant Calling: FreeBayes]
+    F --> G[SnpEff: Variant Annotation]
+    G --> H[Annotated VCF File]
 
 
