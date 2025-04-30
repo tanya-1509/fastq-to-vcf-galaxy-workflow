@@ -35,7 +35,9 @@ Creating a workflow:
 
 -> Saving and running the workflow on the given data files.
 
-Below we are going to loo
+Below we are going to look at the step by step approach on how to convert FASTQ files to VCF:
+
+**Table 1** : Tools used in the workflow and the descripton
 
 | Step | Tool Name | Description |
 |------|-----------|-------------|
