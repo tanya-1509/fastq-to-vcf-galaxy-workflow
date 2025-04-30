@@ -35,6 +35,15 @@ Creating a workflow:
 
 -> Saving and running the workflow on your dataset.
 
+| Step | Tool Name | Description |
+|------|-----------|-------------|
+| 1 | **FastQC** | Performs quality checks on raw FASTQ files |
+| 2 | **Trimmomatic** | Removes low-quality bases and adapters |
+| 3 | **BWA-MEM** | Aligns reads to a reference genome (e.g., hg38 which is an in built reference or reference fasta provided) |
+| 4 | **Samtools Sort** | Sorts BAM files by genomic coordinates |
+| 5 | **Picard MarkDuplicates** | Identifies and marks duplicate reads |
+| 6 | **FreeBayes** | Performs variant calling to generate raw VCF |
+
 
 
 
