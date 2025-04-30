@@ -14,3 +14,4 @@ Creating an UseGalaxy account:
 -> Fill in your details and verify your email.
 -> Log in and start building your workflow.
 
+,
