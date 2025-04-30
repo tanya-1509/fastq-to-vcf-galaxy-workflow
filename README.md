@@ -1,5 +1,6 @@
 # fastq-to-vcf-galaxy-workflow
-DESCRIPTION: FASTQ to VCF Generation: Workflow and its Explanation using UseGalaxy
+DESCRIPTION: FASTQ to VCF Generation: Workflow and its Explanation using UseGalaxy.
+
 OVERVIEW: This guide provides a comprehensive workflow for converting raw FASTQ sequencing data into annotated VCF files using the UseGalaxy platform.
 
 **FASTQ files** : Raw outputs from high-throughput sequencing, containing nucleotide sequences and corresponding quality scores. These files are the starting point of many genomic data analyses.
@@ -21,4 +22,4 @@ Creating an UseGalaxy account:
 
 -> Log in and start building your workflow.
 
-,
+
