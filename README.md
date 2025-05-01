@@ -42,10 +42,11 @@ Below we are going to look at the step by step approach on how to convert FASTQ 
 | Step | Tool Name | Description |
 |------|-----------|-------------|
 | 1 | **FastQC** | Performs quality checks on raw FASTQ files |
-| 2 | **Trimmomatic** | Removes low-quality bases and adapters |
+| 2 | **Trim Galore** | Automatically trims Illumina adapters and low-quality bases using Cutadapt; includes optional FastQC reporting |
 | 3 | **BWA-MEM2** | Aligns reads to a reference genome (e.g., hg38 which is an in built reference or reference fasta provided) |
 | 4 | **Picard MarkDuplicates** | Identifies and marks duplicate reads |
-| 5 | **FreeBayes** | Performs variant calling to generate raw VCF |
+| 5 | **SortSam** | Sorts SAM/BAM files by coordinate or name using Picard; prepares files for downstream analysis |
+| 6 | **FreeBayes** | Performs variant calling to generate raw VCF |
 
 **Detailed explanation of each of the tools/steps used:**
 
