@@ -46,7 +46,7 @@ Below we are going to look at the step by step approach on how to convert FASTQ 
 | 3 | **BWA-MEM2** | Aligns reads to a reference genome (e.g., hg38 which is an in built reference or reference fasta provided) |
 | 4 | **Picard MarkDuplicates** | Identifies and marks duplicate reads |
 | 5 | **SortSam** | Sorts SAM/BAM files by coordinate or name using Picard; prepares files for downstream analysis |
-| 6 | **FreeBayes** | Performs variant calling to generate raw VCF |
+| 6 | **GATK4 Mutect2** | Calls somatic variants in tumor or tumor-normal pairs using a Bayesian model; optimized for cancer mutation detection |
 
 **Detailed explanation of each of the tools/steps used:**
 
@@ -58,7 +58,7 @@ Below we are going to look at the step by step approach on how to convert FASTQ 
 
     Purpose: Identifies issues like low-quality reads or adapter contamination.
 
-2. Trimming - Trimmomatic
+2. Trimming - Trim Galore
 
     Input: Raw FASTQ
 
@@ -66,7 +66,7 @@ Below we are going to look at the step by step approach on how to convert FASTQ 
 
     Purpose: Removes adapters and low-quality bases, improving downstream analysis.
 
-3. Alignment - BWA-MEM
+3. Alignment - BWA-MEM2
 
     Input: Clean FASTQ + Reference Genome
 
@@ -74,7 +74,15 @@ Below we are going to look at the step by step approach on how to convert FASTQ 
 
     Purpose: Maps reads to a known reference genome.
 
-4. Mark Duplicates - Picard
+4. Tool Name: SortSam
+
+    Input: SAM or BAM file (unsorted)
+
+    Output: Sorted BAM file (by coordinate or read name)
+
+    Purpose: Organizes sequencing reads for downstream tools (e.g., MarkDuplicates, variant calling)
+
+5. Mark Duplicates - Picard
 
     Input: BAM
 
@@ -82,7 +90,7 @@ Below we are going to look at the step by step approach on how to convert FASTQ 
 
     Purpose: Identifies and flags PCR duplicates to avoid false variants.
 
-5. Variant Calling - FreeBayes or GATK
+6. Variant Calling - GATK4 Mutect2
 
     Input: BAM + Reference Genome
 
