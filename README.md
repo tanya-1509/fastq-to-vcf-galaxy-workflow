@@ -97,3 +97,6 @@ Below we are going to look at the step by step approach on how to convert FASTQ 
     Output: VCF
 
     Purpose: Detects SNPs and INDELs from aligned reads.
+
+The below URL can be used to convert the FASTQ files to VCF for further analysis:
+https://usegalaxy.org/u/varshitha/w/fastq-2-vcf-workflow 
